@@ -225,6 +225,18 @@ header.header.sticky {
     }
 }
 
+/* Navegação desktop - TEXTO ESCURO */
+.nav-desktop-phone {
+    flex-grow: 1;
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .nav-desktop-phone {
+        display: flex;
+    }
+}
+
 .nav-list {
     display: flex;
     list-style: none;
