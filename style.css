@@ -200,8 +200,9 @@ header.header.sticky {
 
 /* Logo - versão normal (não negativa) */
 .logo {
-    flex-shrink: 0;
-    max-width: 300px;
+    display: block;
+	flex-shrink: 0;
+    max-width: 250px;
 }
 
 .logo-img {
