@@ -466,17 +466,14 @@ header.header.sticky {
 .mobile-link-phone {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
     line-height: 1;
-    padding: var(--space-md) var(--space-lg);
     font-weight: 600;
+    text-align: center;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
     background: var(--ouro);
     color: var(--cinza-escuro);
-    white-space: nowrap;
 }
 
 .mobile-link-phone:hover {
