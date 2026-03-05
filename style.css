@@ -448,6 +448,57 @@ header.header.sticky {
     color: var(--branco);
 }
 
+.mobile-link-primary {
+    background: var(--ouro);
+    color: var(--cinza-escuro);
+}
+
+.mobile-link-primary:hover {
+    background: var(--ouro-claro);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+}
+
+.mobile-link-primary:focus {
+    outline: 3px solid var(--ouro-claro);
+    outline-offset: 2px;
+}
+.mobile-link-phone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    line-height: 1;
+    padding: var(--space-md) var(--space-lg);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    background: var(--ouro);
+    color: var(--cinza-escuro);
+    white-space: nowrap;
+}
+
+.mobile-link-phone:hover {
+    background: var(--ouro-claro);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+}
+
+.mobile-link-phone:focus {
+    outline: 3px solid var(--ouro-claro);
+    outline-offset: 2px;
+}
+
+/* Estilo para o ícone dentro do botão telefone */
+.mobile-link-phone img {
+    width: 18px;
+    height: 18px;
+    display: block;
+    filter: brightness(0) invert(0);  /* Mantém as cores originais do SVG */
+}
+
+
 /* =====================================================================
    HOME / HERO & COMPONENTES COMUNS
    - Hero
