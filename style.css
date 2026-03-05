@@ -424,7 +424,7 @@ header.header.sticky {
 .mobile-link {
     display: block;
     padding: 1rem 20px;
-    border-bottom: 1px solid var(--cinza-claro);
+  /*  border-bottom: 1px solid var(--cinza-claro); */
     color: var(--cinza-escuro);  /* Texto escuro */
     text-decoration: none;
     transition: background 0.3s ease;
@@ -435,7 +435,7 @@ header.header.sticky {
     background: var(--areia);
     color: var(--ouro);
 }
-
+ 
 .btn-mobile-phone {
     background: var(--ouro);
     color: var(--cinza-escuro);
@@ -464,7 +464,7 @@ header.header.sticky {
     outline-offset: 2px;
 }
 .mobile-link-phone {
-    display: inline-flex;
+/*    display: inline-flex; */
     align-items: center;
     gap: 8px;
     line-height: 1;
