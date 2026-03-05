@@ -464,7 +464,7 @@ header.header.sticky {
     outline-offset: 2px;
 }
 .mobile-link-phone {
-/*    display: inline-flex; */
+    display: flex; 
     align-items: center;
     gap: 8px;
     line-height: 1;
