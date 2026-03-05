@@ -202,7 +202,7 @@ header.header.sticky {
 .logo {
     display: block;
 	flex-shrink: 0;
-    max-width: 250px;
+    max-width: 300px;
 }
 
 .logo-img {
@@ -372,7 +372,7 @@ header.header.sticky {
 /* Versão tablet */
 @media (min-width: 768px) and (max-width: 991px) {
     .logo {
-        max-width: 250px;
+        max-width: 300px;
     }
 
     .btn-phone {
@@ -385,7 +385,7 @@ header.header.sticky {
 /* Versão mobile */
 @media (max-width: 767px) {
     .logo {
-        max-width: 200px;
+        max-width: 250px;
     }
 
     .btn-phone {
