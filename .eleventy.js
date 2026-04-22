@@ -20,14 +20,12 @@ export default function (eleventyConfig) {
   
   /**
    * Filtro 'date' para formatar datas em templates Nunjucks
-   * Uso: {{ dateObj | date('Y') }} → "2026"
-   * Uso: {{ dateObj | date('full') }} → "22 de abril de 2026"
+   * Uso: {{ now | date('Y') }} → "2026"
+   * Uso: {{ now | date('full') }} → "22 de abril de 2026"
    */
   eleventyConfig.addFilter("date", (dateObj, format) => {
-    // Se não for passado um objeto Date válido, usa a data atual
     const date = dateObj instanceof Date && !isNaN(dateObj) ? dateObj : new Date();
     
-    // Formatos suportados
     switch (format) {
       case 'Y':
         return date.getFullYear().toString();
@@ -51,29 +49,32 @@ export default function (eleventyConfig) {
         return date.toISOString();
       
       default:
-        // Retorna string ISO como fallback
         return date.toISOString();
     }
   });
-
-  /**
-   * Filtro 'year' simplificado apenas para o copyright
-   * Uso: {{ year }} → "2026"
-   */
-  eleventyConfig.addFilter("year", () => new Date().getFullYear().toString());
+  
+  eleventyConfig.addPassthroughCopy({
+  "node_modules/@fortawesome/fontawesome-free/webfonts": "assets/webfonts"
+});
 
   // =================================================================
-  // ➕ DADOS GLOBAIS
+  // ➕ DADOS GLOBAIS (acessíveis diretamente como {{ variavel }})
   // =================================================================
   
   /**
-   * Disponibiliza objeto 'now' com a data/hora do build
-   * Uso: {{ now | date('Y') }} no footer
+   * Disponibiliza 'year' como variável global direta
+   * Uso: {{ year }} → "2026" ✅
+   */
+  eleventyConfig.addGlobalData("year", () => new Date().getFullYear().toString());
+  
+  /**
+   * Disponibiliza objeto 'now' para uso com filtro date
+   * Uso: {{ now | date('Y') }} → "2026" ✅
    */
   eleventyConfig.addGlobalData("now", () => new Date());
   
   /**
-   * Disponibiliza 'buildTimestamp' para cache-busting
+   * Timestamp para cache-busting de assets
    * Uso: <script src="app.js?v={{ buildTimestamp }}">
    */
   eleventyConfig.addGlobalData("buildTimestamp", () => Date.now());
@@ -88,7 +89,6 @@ export default function (eleventyConfig) {
       includes: "_includes",
       output: "dist"
     },
-    // Opcional: melhorar logs durante o build
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"
   };
