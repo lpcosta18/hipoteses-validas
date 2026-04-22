@@ -4,7 +4,7 @@
 
 export default function (eleventyConfig) {
   
-  // Copy static assets directly to the output folder
+  // Copy static assets
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("style.css");
   eleventyConfig.addPassthroughCopy("script.js");
@@ -12,77 +12,42 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy(".htaccess");
   eleventyConfig.addPassthroughCopy("fonts");
 
+  // Template formats
   eleventyConfig.setTemplateFormats(["njk", "html"]);
 
-  // =================================================================
-  // ➕ FILTROS PERSONALIZADOS
-  // =================================================================
-  
-  /**
-   * Filtro 'date' para formatar datas em templates Nunjucks
-   * Uso: {{ now | date('Y') }} → "2026"
-   * Uso: {{ now | date('full') }} → "22 de abril de 2026"
-   */
+  // Filtro de datas
   eleventyConfig.addFilter("date", (dateObj, format) => {
     const date = dateObj instanceof Date && !isNaN(dateObj) ? dateObj : new Date();
     
-    switch (format) {
-      case 'Y':
-        return date.getFullYear().toString();
-      
-      case 'full':
-        return date.toLocaleDateString('pt-PT', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-          weekday: 'long'
-        });
-      
-      case 'short':
-        return date.toLocaleDateString('pt-PT', {
-          year: 'numeric',
-          month: 'short',
-          day: 'numeric'
-        });
-      
-      case 'ISO':
-        return date.toISOString();
-      
-      default:
-        return date.toISOString();
+    if (format === 'Y') {
+      return date.getFullYear().toString();
     }
+    if (format === 'full') {
+      return date.toLocaleDateString('pt-PT', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        weekday: 'long'
+      });
+    }
+    if (format === 'short') {
+      return date.toLocaleDateString('pt-PT', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      });
+    }
+    return date.toISOString();
   });
-  
-  eleventyConfig.addPassthroughCopy({
-  "node_modules/@fortawesome/fontawesome-free/webfonts": "assets/webfonts"
-});
 
-  // =================================================================
-  // ➕ DADOS GLOBAIS (acessíveis diretamente como {{ variavel }})
-  // =================================================================
-  
-  /**
-   * Disponibiliza 'year' como variável global direta
-   * Uso: {{ year }} → "2026" ✅
-   */
+  // Dados globais
   eleventyConfig.addGlobalData("year", () => new Date().getFullYear().toString());
-  
-  /**
-   * Disponibiliza objeto 'now' para uso com filtro date
-   * Uso: {{ now | date('Y') }} → "2026" ✅
-   */
   eleventyConfig.addGlobalData("now", () => new Date());
-  
-  /**
-   * Timestamp para cache-busting de assets
-   * Uso: <script src="app.js?v={{ buildTimestamp }}">
-   */
   eleventyConfig.addGlobalData("buildTimestamp", () => Date.now());
+  eleventyConfig.addGlobalData("siteUrl", "https://hipoteses-validas.pt");
+  eleventyConfig.addGlobalData("vercelAnalyticsId", process.env.VERCEL_ANALYTICS_ID || '');
 
-  // =================================================================
-  // ➕ CONFIGURAÇÃO DE OUTPUT
-  // =================================================================
-  
+  // Configuração de output
   return {
     dir: {
       input: "src",

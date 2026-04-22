@@ -1,4 +1,7 @@
 {# src/_includes/base.njk #}
+{# Layout Base - Hipóteses Válidas #}
+{# Inclui: SEO técnico, Vercel Analytics, Acessibilidade, Performance #}
+
 <!DOCTYPE html>
 <html lang="pt-PT" class="scroll-smooth">
 <head>
@@ -6,26 +9,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    {# SEO Básico #}
-    <title>{{ title }} | Hipóteses Válidas</title>
-    <meta name="description" content="{{ description | default('Contabilidade, Fiscalidade e Apoio à Gestão com rigor e proximidade em Torres Vedras') }}">
+    {# ========== SEO BÁSICO ========== #}
+    <title>{% if title %}{{ title }} | {% endif %}Hipóteses Válidas - Contabilidade em Torres Vedras</title>
+    <meta name="description" content="{{ description | default('Contabilidade, Fiscalidade e Apoio à Gestão com rigor e proximidade em Torres Vedras. Membro da OCC desde 2011.') }}">
+    <meta name="keywords" content="contabilidade torres vedras, fiscalidade, apoio à gestão, contabilista certificado, PME, IRS, IRC, IVA, recursos humanos, mediação de seguros">
     <meta name="author" content="Hipóteses Válidas, Lda.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     
-    {# Open Graph / Social Sharing #}
+    {# Canonical URL #}
+    <link rel="canonical" href="{{ siteUrl | default('https://hipoteses-validas.pt') }}{{ page.url }}">
+    
+    {# ========== OPEN GRAPH / SOCIAL SHARING ========== #}
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_PT">
-    <meta property="og:title" content="{{ title }} | Hipóteses Válidas">
-    <meta property="og:description" content="{{ description | default('Contabilidade e Fiscalidade em Torres Vedras') }}">
-    <meta property="og:url" content="{{ siteUrl | default('https://hipoteses-validas.pt') }}">
-    <meta property="og:image" content="{{ siteUrl | default('https://hipoteses-validas.pt') }}/assets/logo/logo-hv-home-neg-optimized.png">
+    <meta property="og:site_name" content="Hipóteses Válidas">
+    <meta property="og:title" content="{{ title | default('Hipóteses Válidas') }} | Contabilidade em Torres Vedras">
+    <meta property="og:description" content="{{ description | default('Contabilidade, Fiscalidade e Apoio à Gestão com rigor e proximidade desde 2011.') }}">
+    <meta property="og:url" content="{{ siteUrl | default('https://hipoteses-validas.pt') }}{{ page.url }}">
+    <meta property="og:image" content="{{ siteUrl | default('https://hipoteses-validas.pt') }}/assets/logo/logo-hv-home-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Hipóteses Válidas - Contabilidade e Fiscalidade em Torres Vedras">
     
-    {# Favicon #}
-    <link rel="icon" type="image/png" href="/assets/logo/favicon.png">
+    {# ========== TWITTER CARD ========== #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title | default('Hipóteses Válidas') }} | Contabilidade em Torres Vedras">
+    <meta name="twitter:description" content="{{ description | default('Contabilidade e Fiscalidade com rigor e proximidade desde 2011.') }}">
+    <meta name="twitter:image" content="{{ siteUrl | default('https://hipoteses-validas.pt') }}/assets/logo/logo-hv-home-og.png">
     
-    {# CSS Principal #}
+    {# ========== FAVICONS ========== #}
+    <link rel="icon" type="image/png" href="/assets/logo/logo-hv-favicon-optimized.png">
+    <link rel="apple-touch-icon" href="/assets/logo/apple-touch-icon.png">
+    
+    {# ========== PERFORMANCE: PRECONNECT ========== #}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://vercel.com">
+    
+    {# ========== CSS PRINCIPAL ========== #}
     <link rel="stylesheet" href="/style.css">
     
-    {# Font Awesome 6.5.1 - CDN (Carregamento Assíncrono) #}
+    {# ========== FONT AWESOME 6.5.1 - CDN (Carregamento Assíncrono) ========== #}
     <link 
       rel="preload" 
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
@@ -45,18 +70,90 @@
       >
     </noscript>
     
-    {# Fonts Locais (se aplicável) #}
-    {% if fonts %}
-    <link rel="preload" href="/fonts/NeueRegrade/NeueRegrade-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    {% endif %}
+    {# ========== GOOGLE FONTS (Inter) ========== #}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    {# Scripts no Head (se necessário) #}
+    {# ========== ANALYTICS & MONITORIZAÇÃO ========== #}
+    
+    {# Google Analytics 4 - COMENTADO (não configurado ainda) #}
+    {# 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', {
+        'anonymize_ip': true,
+        'page_path': window.location.pathname
+      });
+    </script>
+    #}
+    
+    {# Vercel Analytics - ATIVO (código padrão Vercel) #}
+    <script defer src="https://vercel.com/script.js" data-website-id="{{ vercelAnalyticsId | default('') }}"></script>
+    
+    {# Vercel Speed Insights - ATIVO (código padrão Vercel) #}
+    <script defer src="https://vercel.com/speed-insights/script.js"></script>
+    
+    {# ========== STRUCTURED DATA - JSON-LD (LocalBusiness) ========== #}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AccountingService",
+      "name": "Hipóteses Válidas, Lda.",
+      "image": "{{ siteUrl | default('https://hipoteses-validas.pt') }}/assets/logo/logo-hv-home-og.png",
+      "@id": "{{ siteUrl | default('https://hipoteses-validas.pt') }}#organization",
+      "url": "{{ siteUrl | default('https://hipoteses-validas.pt') }}",
+      "telephone": "+351968481817",
+      "email": "geral@hipoteses-validas.pt",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Joaquim Maria Simões, 1",
+        "addressLocality": "Torres Vedras",
+        "postalCode": "2560-281",
+        "addressCountry": "PT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.0917,
+        "longitude": -9.2597
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/hip-teses-v-lidas-lda-/",
+        "https://www.facebook.com/profile.php?id=100063653616493"
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Torres Vedras"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços de Contabilidade e Gestão",
+        "itemListElement": [
+          { "@type": "OfferCatalog", "name": "Contabilidade" },
+          { "@type": "OfferCatalog", "name": "Fiscalidade" },
+          { "@type": "OfferCatalog", "name": "Apoio à Gestão" },
+          { "@type": "OfferCatalog", "name": "Recursos Humanos" },
+          { "@type": "OfferCatalog", "name": "Mediação de Seguros" }
+        ]
+      }
+    }
+    </script>
+    
+    {# ========== BLOCK PARA HEAD PERSONALIZADO POR PÁGINA ========== #}
     {% block head %}{% endblock %}
 </head>
 
 <body class="bg-white text-dark antialiased">
-    {# Skip Link para Acessibilidade #}
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-ouro-claro text-white px-4 py-2 rounded z-50">
+    {# Skip Link para Acessibilidade (WCAG 2.1) #}
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-ouro-claro text-white px-4 py-2 rounded z-50 transition-all">
         Saltar para o conteúdo principal
     </a>
     
@@ -64,18 +161,18 @@
     {% include "header.njk" %}
     
     {# Conteúdo Principal #}
-    <main id="main-content" class="min-h-screen">
+    <main id="main-content" class="min-h-screen" tabindex="-1">
         {{ content | safe }}
     </main>
     
     {# Footer #}
     {% include "footer.njk" %}
     
-    {# Scripts no Final do Body #}
+    {# Scripts Base (defer para não bloquear renderização) #}
     <script src="/script.js" defer></script>
     <script src="/header.js" defer></script>
     
-    {# Scripts Inline (se necessário) #}
+    {# Block para Scripts Personalizados por Página #}
     {% block scripts %}{% endblock %}
 </body>
 </html>
