@@ -4,91 +4,45 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static website for "Hipóteses Válidas" - an accounting and tax services company in Torres Vedras, Portugal. The site is built with Eleventy (11ty) static site generator and includes a Node.js server for handling contact form submissions via MailerSend API.
+This is a static website for "Hipóteses Válidas" — an accounting and tax services company in Torres Vedras, Portugal. The site is built with Eleventy (11ty) static site generator and includes a Node.js server for handling contact form submissions via MailerSend API.
 
 ## Development Commands
 
-### Build and Development
-- `npm run build` - Build the static site with Eleventy (outputs to `dist/`)
-- `npm run dev` - Start Eleventy development server with live reload
-- `npm start` - Start the production Node.js server (serves `dist/` and handles `/api/contact`)
+- `npm run build` — Build the static site with Eleventy (outputs to `dist/`)
+- `npm run dev` — Start Eleventy development server with live reload
+- `npm start` — Start the production Node.js server (serves `dist/` and handles `/api/contact`)
 
-### Important Notes
-- The contact form only works when served by the Node.js server (`npm start`) because it requires the `/api/contact` endpoint
-- Static builds (`npm run build`) or Eleventy dev server (`npm run dev`) won't process contact form submissions
-- For local testing, create a `.env` file with MailerSend credentials (see ENV.md)
+The contact form only works when served by the Node.js server (`npm start`) because it requires the `/api/contact` endpoint. For local testing, create a `.env` file with MailerSend credentials (see ENV.md).
 
 ## Architecture
 
 ### Static Site Generation
-- **Eleventy Configuration**: `.eleventy.js` configures input (`src/`), output (`dist/`), and passthrough copies
-- **Templates**: Nunjucks (`.njk`) templates in `src/` with includes in `src/_includes/`
-- **Static Assets**: `assets/` folder contains images, logos, and icons
-- **CSS/JS**: `style.css`, `script.js`, `header.js` are copied directly to output
+- **Eleventy Configuration** (`.eleventy.js`): Input dir `src/`, output dir `dist/`, passthrough copies for `assets/`, `style.css`, `script.js`, `header.js`, `.htaccess`, `fonts/`
+- **Templates**: Nunjucks (`.njk`) with `{% include %}` partials for header and footer
+- **Pages**: `src/index.njk` (homepage), `src/sobre.njk` (about), `src/servicos.njk` (services), `src/contacto.njk` (contact)
+- **Permalink override**: Most pages use frontmatter `permalink` to set the output filename (e.g., `permalink: sobre.html`)
+- **CSS/JS**: Single monolithic `style.css` (~1050 lines) with custom `@font-face` declarations for Neue Regrade font. JS split across `header.js` (menu, sticky header) and `script.js` (contact form handler)
 
-### Server-Side Components
-- **Node.js Server**: `server.js` serves static files from `dist/` and provides `/api/contact` endpoint
-- **Contact Form**: POST to `/api/contact` sends emails via MailerSend API
-- **Environment Variables**: Required for MailerSend (API key, email addresses)
+### Server-Side
+- **Node.js Server** (`server.js`): Express-based, serves `dist/` statically, provides `POST /api/contact` endpoint using `mailersend` SDK
+- **Contact Form Flow**: Client JS sends JSON POST -> server validates required fields (nome, email, mensagem) -> sends email via MailerSend with reply-to set to the submitter -> returns JSON `{ success: true/false, error?: string }`
+- **HTML escaping**: Custom `escapeHtml()` utility for XSS prevention in email content
 
-### Project Structure
-```
-├── src/                    # Source templates (Nunjucks)
-│   ├── _includes/         # Header, footer partials
-│   ├── *.njk             # Page templates (index, sobre, servicos, contacto)
-├── dist/                  # Built static site (generated)
-├── assets/               # Images, logos, icons
-├── fonts/                # Custom Neue Regrade font files
-├── style.css            # Main stylesheet
-├── script.js            # Main JavaScript
-├── header.js            # Header navigation JavaScript
-├── .eleventy.js         # Eleventy configuration
-├── server.js            # Node.js server with contact API
-├── package.json         # Dependencies and scripts
-├── ENV.md              # Environment variables documentation
-└── render.yaml          # Render.com deployment configuration
-```
+### Deployment (Render.com)
+- **Build**: `npm install && npm run build`
+- **Start**: `node server.js`
+- **Env vars** (set in Render dashboard): `MAILERSEND_API_KEY`, `FROM_EMAIL`, `FROM_NAME`, `TO_EMAIL`, `TO_NAME`
 
-## Key Files
+### Design Tokens
+- **Primary**: Gold `#c59e43` — accents, highlights, SVG icons
+- **Secondary**: Sand `#f3ede2`, Green `#3a6b5b`
+- **Text**: Dark gray `#333333`, Medium gray `#6b6b6b`
+- **Font**: Custom Neue Regrade (OTF, 4 weights) with Inter fallback
+- **Responsive**: Mobile-first, breakpoints at 768px, 1024px
 
-### Configuration Files
-- `.eleventy.js`: Eleventy static site generator configuration
-- `server.js`: Node.js Express server with MailerSend integration
-- `render.yaml`: Deployment configuration for Render.com
-- `ENV.md`: Documentation for required environment variables
-
-### Template Files
-- `src/index.njk`: Homepage
-- `src/sobre.njk`: About page
-- `src/servicos.njk`: Services page
-- `src/contacto.njk`: Contact page with form
-- `src/_includes/header.njk`: Site header navigation
-- `src/_includes/footer.njk`: Site footer
-
-### Frontend Assets
-- `style.css`: Complete CSS with custom Neue Regrade font faces and design system
-- `script.js`: Main JavaScript functionality
-- `header.js`: Mobile menu toggle functionality
-
-## Deployment
-
-The site is configured for deployment on Render.com:
-- **Service Type**: Web (Node.js runtime)
-- **Build Command**: `npm install && npm run build`
-- **Start Command**: `node server.js`
-- **Environment Variables**: Must be set in Render dashboard (MAILERSEND_API_KEY, FROM_EMAIL, TO_EMAIL, etc.)
-
-## Environment Variables
-
-Required for contact form functionality (see ENV.md for details):
-- `MAILERSEND_API_KEY`: MailerSend API token
-- `FROM_EMAIL`: Verified sender email in MailerSend
-- `TO_EMAIL`: Recipient email for contact submissions
-- `FROM_NAME`, `TO_NAME`: Optional display names
-
-## Design System
-
-- **Primary Color**: Gold (`#c59e43`) used for accents and highlights
-- **Typography**: Custom Neue Regrade font with Inter fallback
-- **Responsive**: Mobile-first design with breakpoints
-- **Icons**: Custom SVG icons in gold and sand colors
+### Key Conventions
+- ES modules (`"type": "module"` in package.json)
+- Portuguese language throughout templates and server messages
+- SVG icons in two color variants: `-ouro` (gold) and `-areia` (sand)
+- Logo images in PNG + WebP formats via `srcset`
+- No tests or linting configured
