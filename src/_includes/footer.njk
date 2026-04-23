@@ -1,7 +1,5 @@
-{# 
-  Footer Component - Hipóteses Válidas
-  Requisitos: Tailwind CSS, Font Awesome, Nunjucks
-#}
+{# src/_includes/footer.njk #}
+{# Footer Component - Hipóteses Válidas #}
 
 <footer class="footer bg-dark text-white py-12">
     <div class="container mx-auto px-4">
@@ -10,13 +8,11 @@
             {# === Coluna 1: Logo, Descrição e Redes Sociais === #}
             <div class="footer-info flex flex-col items-start space-y-4">
                 <div class="footer-logo">
-                    <a href="{{ '/' | url }}" class="logo block" aria-label="Hipóteses Válidas - Página Inicial">
-                        <img src="assets/logo/logo-hv-home-neg-optimized.png"
-                             srcset="assets/logo/logo-hv-home-neg.webp 1000w, assets/logo/logo-hv-home-neg-optimized.png 1000w"
-                             sizes="(max-width: 768px) 200px, 300px"
+                    <a href="/" class="logo block" aria-label="Hipóteses Válidas - Página Inicial">
+                        <img src="/assets/logo/logo-hv-home-neg.webp"
                              alt="Hipóteses Válidas - Contabilidade e Fiscalidade em Torres Vedras"
-                             class="logo-img h-auto max-w-full"
-                             width="300"
+                             class="logo-img h-[54px] w-auto"
+                             width="200"
                              height="54"
                              loading="lazy">
                     </a>
@@ -26,8 +22,9 @@
                     Contabilidade, Fiscalidade e Apoio à Gestão com rigor e proximidade.
                 </p>
                 
-                {# Redes Sociais - Com acessibilidade e segurança #}
+                {# Redes Sociais - SVGs Inline (sem dependência Font Awesome) #}
                 <div class="flex space-x-4 mt-2" role="navigation" aria-label="Redes sociais">
+                    {# LinkedIn #}
                     <a href="https://www.linkedin.com/company/hip-teses-v-lidas-lda-/" 
                        target="_blank" 
                        rel="noopener noreferrer"
@@ -35,8 +32,13 @@
                        class="w-10 h-10 rounded-full flex items-center justify-center 
                               transition-transform duration-300 hover:scale-110 
                               bg-white/10 text-ouro-claro hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-ouro-claro">
-                        <i class="fab fa-linkedin-in text-lg" aria-hidden="true"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" 
+                             class="w-5 h-5 fill-current" aria-hidden="true">
+                            <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
+                        </svg>
                     </a>
+                    
+                    {# Facebook #}
                     <a href="https://www.facebook.com/profile.php?id=100063653616493" 
                        target="_blank" 
                        rel="noopener noreferrer"
@@ -44,7 +46,10 @@
                        class="w-10 h-10 rounded-full flex items-center justify-center 
                               transition-transform duration-300 hover:scale-110 
                               bg-white/10 text-ouro-claro hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-ouro-claro">
-                        <i class="fab fa-facebook-f text-lg" aria-hidden="true"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" 
+                             class="w-5 h-5 fill-current" aria-hidden="true">
+                            <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -53,26 +58,60 @@
             <div class="footer-contactos-localizacao">
                 <h4 class="text-lg font-semibold mb-4 text-ouro-claro">Contactos & Localização</h4>
                 <ul class="footer-list space-y-3">
+                    {# Telefone #}
                     <li class="info-item flex items-start space-x-3">
-                        <img src="assets/icons/phone-areia.svg" alt="" class="footer-icon w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
+                             fill="none" stroke="currentColor" stroke-width="2" 
+                             stroke-linecap="round" stroke-linejoin="round"
+                             class="footer-icon w-5 h-5 flex-shrink-0 mt-0.5 text-ouro-claro" 
+                             aria-hidden="true">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
                         <a href="tel:+351968481817" class="hover:text-ouro-claro transition-colors focus:outline-none focus:ring-2 focus:ring-ouro-claro rounded">
                             968 481 817
                         </a>
                     </li>
+                    
+                    {# Email #}
                     <li class="info-item flex items-start space-x-3">
-                        <img src="assets/icons/mail-areia.svg" alt="" class="footer-icon w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
+                             fill="none" stroke="currentColor" stroke-width="2" 
+                             stroke-linecap="round" stroke-linejoin="round"
+                             class="footer-icon w-5 h-5 flex-shrink-0 mt-0.5 text-ouro-claro" 
+                             aria-hidden="true">
+                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
                         <a href="mailto:geral@hipoteses-validas.pt" class="hover:text-ouro-claro transition-colors focus:outline-none focus:ring-2 focus:ring-ouro-claro rounded">
                             geral@hipoteses-validas.pt
                         </a>
                     </li>
+                    
+                    {# Horário #}
                     <li class="info-item flex items-start space-x-3">
-                        <img src="assets/icons/clock-areia.svg" alt="" class="footer-icon w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
+                             fill="none" stroke="currentColor" stroke-width="2" 
+                             stroke-linecap="round" stroke-linejoin="round"
+                             class="footer-icon w-5 h-5 flex-shrink-0 mt-0.5 text-ouro-claro" 
+                             aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
                         <address class="footer-address inline not-italic text-cinza-claro">
                             Segunda a Sexta<br>9h00-13h00 e 14h00-18h00
                         </address>
                     </li>
+                    
+                    {# Morada #}
                     <li class="info-item flex items-start space-x-3">
-                        <img src="assets/icons/location-areia.svg" alt="" class="footer-icon w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
+                             fill="none" stroke="currentColor" stroke-width="2" 
+                             stroke-linecap="round" stroke-linejoin="round"
+                             class="footer-icon w-5 h-5 flex-shrink-0 mt-0.5 text-ouro-claro" 
+                             aria-hidden="true">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
                         <address class="footer-address inline not-italic text-cinza-claro">
                             <a href="https://maps.google.com/?q=Rua+Joaquim+Maria+Simões,+1,+2560-281+Torres+Vedras" 
                                target="_blank" 
@@ -97,53 +136,14 @@
                    class="footer-partner-link inline-flex items-center opacity-80 hover:opacity-100 
                           transition-opacity duration-300 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-ouro-claro rounded"
                    aria-label="Visitar theSmoothPath - Desenvolvimento e Consultoria">
-                    <img src="assets/logo/thesmoothpath-neg.png" 
+                    <img src="/assets/logo/thesmoothpath-neg.png" 
                          alt="theSmoothPath" 
                          class="h-6 w-auto"
-                         width=auto
-                         height="20"
+                         width="100"
+                         height="25"
                          loading="lazy">
                 </a>
             </p>
         </div>
     </div>
 </footer>
-
-{# === Optional: Structured Data para SEO Local (incluir no <head> ou via include) === #}
-{# 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AccountingService",
-  "name": "Hipóteses Válidas, Lda.",
-  "image": "https://hipoteses-validas.pt/assets/logo/logo-hv-home-neg-optimized.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Rua Joaquim Maria Simões, 1",
-    "addressLocality": "Torres Vedras",
-    "postalCode": "2560-281",
-    "addressCountry": "PT"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 39.0917,
-    "longitude": -9.2597
-  },
-  "telephone": "+351968481817",
-  "email": "geral@hipoteses-validas.pt",
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    "opens": "09:00",
-    "closes": "18:00",
-    "validFrom": "2024-01-01",
-    "validThrough": "2026-12-31"
-  },
-  "url": "https://hipoteses-validas.pt",
-  "sameAs": [
-    "https://www.linkedin.com/company/hip-teses-v-lidas-lda-/",
-    "https://www.facebook.com/profile.php?id=100063653616493"
-  ]
-}
-</script>
-#}
