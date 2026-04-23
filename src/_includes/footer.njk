@@ -1,143 +1,123 @@
 {# src/_includes/footer.njk #}
 {# Footer Component - Hipóteses Válidas #}
 
-<footer class="footer bg-dark text-white py-12">
-    <div class="container mx-auto px-4">
-        <div class="footer-grid grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid">
             
             {# === Coluna 1: Logo, Descrição e Redes Sociais === #}
-            <div class="footer-info flex flex-col items-start space-y-4">
+            <div class="footer-col-left">
                 <div class="footer-logo">
-                    <a href="/" class="logo block" aria-label="Hipóteses Válidas - Página Inicial">
-                        <img src="/assets/logo/logo-hv-home-neg.webp"
-                             alt="Hipóteses Válidas - Contabilidade e Fiscalidade em Torres Vedras"
-                             class="logo-img h-[54px] w-auto"
+                    <a href="/" aria-label="Hipóteses Válidas - Página Inicial">
+                        <img src="/assets/logo/logo-hv-home-neg.png"
+                             alt="Hipóteses Válidas"
+                             class="footer-logo-img"
                              width="200"
-                             height="54"
+                             height="40"
                              loading="lazy">
                     </a>
                 </div>
                 
-                <p class="footer-desc text-cinza-claro max-w-md">
+                <p class="footer-desc">
                     Contabilidade, Fiscalidade e Apoio à Gestão com rigor e proximidade.
                 </p>
                 
-{# Redes Sociais - Replicar PROD #}
-<div class="social-icons" role="navigation" aria-label="Redes sociais">
-    {# LinkedIn #}
-    <a href="https://www.linkedin.com/company/hip-teses-v-lidas-lda-/" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       aria-label="Visitar LinkedIn"
-       class="social-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-            <path fill="#D4AF37" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-        </svg>
-    </a>
-    
-    {# Facebook #}
-    <a href="https://www.facebook.com/profile.php?id=100063653616493" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       aria-label="Visitar Facebook"
-       class="social-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-            <path fill="#D4AF37" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385h-3.047v-3.47h3.047v-2.642c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.513c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385c5.737-.9 10.126-5.864 10.126-11.854z"/>
-        </svg>
-    </a>
-</div>
+                {# Redes Sociais - Estilo PROD #}
+                <div class="social-icons">
+                    {# LinkedIn #}
+                    <a href="https://www.linkedin.com/company/hip-teses-v-lidas-lda-/" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="LinkedIn"
+                       class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    
+                    {# Facebook #}
+                    <a href="https://www.facebook.com/profile.php?id=100063653616493" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Facebook"
+                       class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385h-3.047v-3.47h3.047v-2.642c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.513c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385c5.737-.9 10.126-5.864 10.126-11.854z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
 
             {# === Coluna 2: Contactos e Localização === #}
-            <div class="footer-contactos-localizacao">
-                <h4 class="text-lg font-semibold mb-4 text-ouro-claro">Contactos & Localização</h4>
-                <ul class="footer-list space-y-3">
+            <div class="footer-col-right">
+                <h4 class="footer-title">Contactos & Localização</h4>
+                
+                <ul class="contact-list">
                     {# Telefone #}
-                    <li class="info-item flex items-start space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
-                             fill="none" stroke="currentColor" stroke-width="2" 
-                             stroke-linecap="round" stroke-linejoin="round"
-                             class="footer-icon w-5 h-5 flex-shrink-0 mt-0.5 text-ouro-claro" 
-                             aria-hidden="true">
+                    <li class="contact-item">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                         </svg>
-                        <a href="tel:+351968481817" class="hover:text-ouro-claro transition-colors focus:outline-none focus:ring-2 focus:ring-ouro-claro rounded">
-                            968 481 817
-                        </a>
+                        <a href="tel:+351968481817">968 481 817</a>
                     </li>
                     
                     {# Email #}
-                    <li class="info-item flex items-start space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
-                             fill="none" stroke="currentColor" stroke-width="2" 
-                             stroke-linecap="round" stroke-linejoin="round"
-                             class="footer-icon w-5 h-5 flex-shrink-0 mt-0.5 text-ouro-claro" 
-                             aria-hidden="true">
+                    <li class="contact-item">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <rect x="2" y="4" width="20" height="16" rx="2"/>
                             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                         </svg>
-                        <a href="mailto:geral@hipoteses-validas.pt" class="hover:text-ouro-claro transition-colors focus:outline-none focus:ring-2 focus:ring-ouro-claro rounded">
-                            geral@hipoteses-validas.pt
-                        </a>
+                        <a href="mailto:geral@hipoteses-validas.pt">geral@hipoteses-validas.pt</a>
                     </li>
                     
                     {# Horário #}
-                    <li class="info-item flex items-start space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
-                             fill="none" stroke="currentColor" stroke-width="2" 
-                             stroke-linecap="round" stroke-linejoin="round"
-                             class="footer-icon w-5 h-5 flex-shrink-0 mt-0.5 text-ouro-claro" 
-                             aria-hidden="true">
+                    <li class="contact-item">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <circle cx="12" cy="12" r="10"/>
                             <polyline points="12 6 12 12 16 14"/>
                         </svg>
-                        <address class="footer-address inline not-italic text-cinza-claro">
-                            Segunda a Sexta<br>9h00-13h00 e 14h00-18h00
-                        </address>
+                        <span class="contact-text">
+                            Segunda a Sexta<br>
+                            <em>9h00-13h00 e 14h00-18h00</em>
+                        </span>
                     </li>
                     
                     {# Morada #}
-                    <li class="info-item flex items-start space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
-                             fill="none" stroke="currentColor" stroke-width="2" 
-                             stroke-linecap="round" stroke-linejoin="round"
-                             class="footer-icon w-5 h-5 flex-shrink-0 mt-0.5 text-ouro-claro" 
-                             aria-hidden="true">
+                    <li class="contact-item">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
                             <circle cx="12" cy="10" r="3"/>
                         </svg>
-                        <address class="footer-address inline not-italic text-cinza-claro">
-                            <a href="https://maps.google.com/?q=Rua+Joaquim+Maria+Simões,+1,+2560-281+Torres+Vedras" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               class="hover:text-ouro-claro transition-colors focus:outline-none focus:ring-2 focus:ring-ouro-claro rounded">
-                                Rua Joaquim Maria Simões, 1<br>2560-281 Torres Vedras
-                            </a>
-                        </address>
+                        <a href="https://maps.google.com/?q=Rua+Joaquim+Maria+Simões,+1,+2560-281+Torres+Vedras" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="contact-text">
+                            Rua Joaquim Maria Simões, 1<br>
+                            2560-281 Torres Vedras
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
         
-        {# === Footer Bottom: Copyright e Partner === #}
-        <div class="footer-bottom mt-10 pt-6 border-t border-white/10">
-            <p class="text-sm text-cinza-medio flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-                <span>&copy; {{ year }} Hipóteses Válidas, Lda. Todos os direitos reservados.</span>
-                <span class="hidden sm:inline text-white/20" aria-hidden="true">|</span>
-                <a href="https://thesmoothpath.pt" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   class="footer-partner-link inline-flex items-center opacity-80 hover:opacity-100 
-                          transition-opacity duration-300 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-ouro-claro rounded"
-                   aria-label="Visitar theSmoothPath - Desenvolvimento e Consultoria">
-                    <img src="/assets/logo/thesmoothpath-neg.png" 
-                         alt="theSmoothPath" 
-                         class="h-6 w-auto"
-                         width="100"
-                         height="25"
-                         loading="lazy">
-                </a>
+        {# === Footer Bottom === #}
+        <div class="footer-bottom">
+            <p class="copyright">
+                &copy; {{ year }} Hipóteses Válidas, Lda. Todos os direitos reservados.
             </p>
+            <span class="footer-separator">|</span>
+            <a href="https://thesmoothpath.pt" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="partner-link"
+               aria-label="theSmoothPath">
+                <img src="/assets/logo/thesmoothpath-neg.png" 
+                     alt="theSmoothPath" 
+                     class="partner-logo"
+                     width="80"
+                     height="25"
+                     loading="lazy">
+            </a>
         </div>
     </div>
 </footer>
