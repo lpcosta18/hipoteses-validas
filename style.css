@@ -237,8 +237,9 @@ address {
 
 .antialiased { -webkit-font-smoothing: antialiased; }
 .scroll-smooth { scroll-behavior: smooth; }
+
 /* =================================================================
-   🧭 HEADER - Réplica Exata do PROD
+   🧭 HEADER - Fundo Claro (Réplica PROD)
    ================================================================= */
 .header {
   position: fixed;
@@ -246,15 +247,15 @@ address {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(26, 26, 26, 0.98);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(250, 248, 245, 0.98);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   padding: 12px 0;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .header.scrolled {
-  background: rgba(26, 26, 26, 0.99);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  background: rgba(250, 248, 245, 0.99);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 .header-container {
@@ -282,7 +283,7 @@ address {
 
 .logo:hover .logo-img,
 .logo:focus .logo-img {
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 /* === Menu Desktop === */
@@ -301,20 +302,20 @@ address {
 
 .nav-link {
   display: block;
-  padding: 10px 16px;
-  color: #ffffff;
-  font-size: 14px;
+  padding: 10px 20px;
+  color: #374151;
+  font-size: 15px;
   font-weight: 500;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 8px;
   transition: all 0.2s ease;
 }
 
 .nav-link:hover,
 .nav-link:focus,
 .nav-link.active {
-  color: #D4AF37;
-  background: rgba(255, 255, 255, 0.1);
+  color: #1a1a1a;
+  background: rgba(212, 175, 55, 0.15);
 }
 
 .nav-link:focus-visible {
@@ -322,41 +323,34 @@ address {
   outline-offset: 2px;
 }
 
-/* === Botão Telefone Desktop === */
-.btn-phone {
+/* === Botão Contactos Desktop === */
+.btn-contactos {
   display: none;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
+  padding: 12px 28px;
   background: #D4AF37;
   color: #1a1a1a;
   font-weight: 600;
-  font-size: 14px;
-  border-radius: 8px;
+  font-size: 15px;
+  border-radius: 24px;
   text-decoration: none;
   transition: all 0.3s ease;
   white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.25);
 }
 
-.btn-phone:hover,
-.btn-phone:focus {
+.btn-contactos:hover,
+.btn-contactos:focus {
   background: #E5C14D;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.35);
 }
 
-.btn-phone:focus-visible {
-  outline: 2px solid #ffffff;
+.btn-contactos:focus-visible {
+  outline: 2px solid #1a1a1a;
   outline-offset: 2px;
 }
 
-.btn-icon {
-  width: 16px;
-  height: 16px;
-  stroke: currentColor;
-}
-
-/* === Menu Mobile Toggle (Hamburger) === */
+/* === Menu Mobile Toggle === */
 .menu-toggle {
   display: flex;
   flex-direction: column;
@@ -374,7 +368,7 @@ address {
 
 .menu-toggle:hover,
 .menu-toggle:focus {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .menu-toggle:focus-visible {
@@ -386,12 +380,11 @@ address {
   display: block;
   width: 24px;
   height: 2px;
-  background: #ffffff;
+  background: #1a1a1a;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
 
-/* Animação do hamburger para X */
 .menu-toggle[aria-expanded="true"] .menu-toggle-line:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -408,8 +401,8 @@ address {
   top: 100%;
   left: 0;
   right: 0;
-  background: #1a1a1a;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: #faf8f3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   padding: 16px 20px;
   display: none;
 }
@@ -440,11 +433,9 @@ address {
 }
 
 .mobile-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  display: block;
   padding: 14px 16px;
-  color: #ffffff;
+  color: #374151;
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
@@ -455,28 +446,24 @@ address {
 .mobile-link:hover,
 .mobile-link:focus,
 .mobile-link.active {
-  color: #D4AF37;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.mobile-link-phone {
-  margin-top: 8px;
-  padding: 16px;
+  color: #1a1a1a;
   background: rgba(212, 175, 55, 0.15);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  justify-content: center;
+}
+
+.mobile-link-destaque {
+  margin-top: 12px;
+  padding: 16px;
+  background: #D4AF37;
+  color: #1a1a1a;
   font-weight: 600;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.25);
 }
 
-.mobile-link-phone:hover,
-.mobile-link-phone:focus {
-  background: rgba(212, 175, 55, 0.25);
-}
-
-.mobile-icon {
-  width: 20px;
-  height: 20px;
-  stroke: currentColor;
+.mobile-link-destaque:hover,
+.mobile-link-destaque:focus {
+  background: #E5C14D;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
 }
 
 /* === Responsive Desktop (768px+) === */
@@ -485,8 +472,8 @@ address {
     display: flex;
   }
   
-  .btn-phone {
-    display: flex;
+  .btn-contactos {
+    display: block;
   }
   
   .menu-toggle {
@@ -505,12 +492,16 @@ address {
   }
   
   .nav-link {
-    padding: 10px 20px;
+    padding: 10px 24px;
+  }
+  
+  .btn-contactos {
+    padding: 12px 32px;
     font-size: 15px;
   }
 }
 
-/* === Skip Link (acessibilidade) === */
+/* === Skip Link === */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -527,6 +518,7 @@ address {
 .skip-link:focus {
   top: 0;
 }
+
 /* =================================================================
    🎯 HERO SECTION
    ================================================================= */
