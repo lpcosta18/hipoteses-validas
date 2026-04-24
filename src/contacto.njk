@@ -135,7 +135,7 @@ layout: base.njk
                 </div>
 
                 {# Form #}
-                <form id="contactForm" class="contact-form" novalidate>
+                <form id="contactForm" class="contact-form" novalidate data-api-key="hv_prod_a1b2c3d4e5f6g7h8i9j0">
                     <div class="form-group">
                         <label for="nome">Nome *</label>
                         <input type="text" id="nome" name="nome" required class="form-control" placeholder="O seu nome" autocomplete="name">
@@ -198,13 +198,15 @@ layout: base.njk
 
 {# Form Script #}
 <script>
+// Reset form UI
 function resetContactForm() {
     const form = document.getElementById('contactForm');
     const success = document.getElementById('formSuccess');
     const error = document.getElementById('formError');
     
     form.reset();
-    form.classList.remove('hidden');
+    form.hidden = false;
+    form.style.display = '';
     success.hidden = true;
     error.hidden = true;
     
@@ -217,6 +219,7 @@ function resetContactForm() {
     });
 }
 
+// Form submission
 document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
     e.preventDefault();
     
@@ -229,60 +232,89 @@ document.getElementById('contactForm')?.addEventListener('submit', async functio
     document.querySelectorAll('.form-error-text').forEach(el => el.style.display = 'none');
     document.querySelectorAll('.form-control, .form-select, .form-textarea').forEach(el => el.classList.remove('error'));
     
+    // Validate required fields
     let isValid = true;
     
-    // Validate required fields
-    const requiredFields = ['nome', 'email', 'assunto', 'mensagem', 'privacidade'];
-    requiredFields.forEach(fieldId => {
-        const field = document.getElementById(fieldId);
-        const errorEl = document.getElementById(fieldId + 'Error');
+    const requiredFields = [
+        { id: 'nome', message: 'Este campo é obrigatório' },
+        { id: 'email', message: 'Email inválido', validator: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+        { id: 'assunto', message: 'Selecione um assunto' },
+        { id: 'mensagem', message: 'Este campo é obrigatório' },
+        { id: 'privacidade', message: 'Deve aceitar a política de privacidade', type: 'checkbox' }
+    ];
+    
+    requiredFields.forEach(({ id, message, validator, type }) => {
+        const field = document.getElementById(id);
+        const errorEl = document.getElementById(id + 'Error');
+        let value = type === 'checkbox' ? field.checked : field.value.trim();
         
-        if (fieldId === 'privacidade') {
-            if (!field.checked) {
-                errorEl.style.display = 'block';
-                isValid = false;
-            }
-        } else if (fieldId === 'email') {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!field.value || !emailRegex.test(field.value)) {
-                document.getElementById('emailError').style.display = 'block';
-                field.classList.add('error');
-                isValid = false;
-            }
-        } else {
-            if (!field.value) {
-                errorEl.style.display = 'block';
-                field.classList.add('error');
-                isValid = false;
-            }
+        if (!value || (validator && !validator(value))) {
+            if (errorEl) errorEl.style.display = 'block';
+            if (field.tagName !== 'INPUT' || type !== 'checkbox') field.classList.add('error');
+            isValid = false;
         }
     });
     
     if (!isValid) return;
     
-    // Show loading state
+    // Loading state
     const originalBtnText = submitBtn.innerHTML;
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span class="btn-loading">A enviar...</span>';
     
     try {
-        // TODO: Replace with actual form submission endpoint
-        // Example: await fetch('/api/contact', { method: 'POST', body: new FormData(form) });
+        // Prepare payload
+        const payload = {
+            nome: document.getElementById('nome').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            empresa: document.getElementById('empresa').value.trim(),
+            telemovel: document.getElementById('telemovel').value.trim(),
+            assunto: document.getElementById('assunto').value,
+            mensagem: document.getElementById('mensagem').value.trim(),
+            privacidade: document.getElementById('privacidade').checked,
+            origin: window.location.href
+        };
         
-        // Simulate API call for demo
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        // Get API key from form data attribute or fallback
+        const apiKey = form.dataset.apiKey || '';
         
-        // Show success
+        // Submit to API
+        const response = await fetch('/api/sendContact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                ...(apiKey && { 'x-api-key': apiKey })
+            },
+            body: JSON.stringify(payload)
+        });
+        
+        const result = await response.json();
+        
+        if (!response.ok) {
+            throw new Error(result.error || 'Erro ao enviar mensagem');
+        }
+        
+        // Success: hide form, show success message
         form.hidden = true;
+        form.style.display = 'none';
         success.hidden = false;
         
     } catch (err) {
-        // Show error
+        console.error('Form submission error:', err);
         error.hidden = false;
-        document.getElementById('formErrorMessage').textContent = 'Erro ao enviar mensagem. Tente novamente.';
+        document.getElementById('formErrorMessage').textContent = 
+            err.message || 'Erro ao enviar mensagem. Tente novamente.';
     } finally {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnText;
     }
+});
+
+// Prevent error message showing on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const error = document.getElementById('formError');
+    const success = document.getElementById('formSuccess');
+    if (error) error.hidden = true;
+    if (success) success.hidden = true;
 });
 </script>
