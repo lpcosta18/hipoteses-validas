@@ -1,73 +1,164 @@
 ---
-title: Sobre
-description: Informação sobre a Hipóteses Válidas - Contabilidade em Torres Vedras
+title: Sobre Nós
+description: Conheça a Hipóteses Válidas - Contabilidade e Fiscalidade em Torres Vedras desde 2011. Acompanhamento permanente com rigor e ética profissional.
 layout: base.njk
 ---
-permalink: sobre.html
----
-<!DOCTYPE html>
-<html lang="pt-PT">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre nós - Hipóteses Válidas</title>
-    <meta name="description" content="Conheça a Hipóteses Válidas, empresa de contabilidade, fiscalidade e apoio à gestão em Torres Vedras.">
-    <link rel="icon" type="image/png" href="assets/logo/logo-hv-favicon-optimized.png">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    {% include "header.njk" %}
 
-    <main id="main-content" tabindex="-1">
-        <section class="page-header">
-            <div class="container">
-                <h1>Sobre a Hipóteses Válidas</h1>
-            </div>
-        </section>
-
-        <section class="about-content">
-            <div class="container about-container">
+{# About Section #}
+<section id="sobre" class="about-section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-content">
+                <h2 class="section-title">
+                    Sobre a <span class="title-highlight">Hipóteses Válidas</span>
+                </h2>
+                <div class="section-divider"></div>
+                
                 <div class="about-text">
-                    <p class="about-paragraph">A Hipóteses Válidas, Lda., iniciou a sua atividade na sequência das necessidades sentidas no seio das PME's no âmbito da contabilidade, fiscalidade e gestão.</p>
-                    <p class="about-paragraph">A empresa tem como missão fazer um acompanhamento permanente no intuito de ajudar os clientes a crescerem, baseando as nossas ações no maior rigor e ética.</p>
-                    <p class="about-paragraph">O nosso objetivo principal é satisfazer os nossos clientes nas áreas da Contabilidade, Fiscalidade, Apoio à Gestão e Gestão Administrativa de Recursos Humanos. Prestamos ainda um serviço de proximidade na área da Mediação de Seguros.</p>
-                    <p class="about-paragraph">A Hipóteses Válidas, Lda., presta serviços de contabilidade a empresários, PME's e outras entidades em todo o País.</p>
+                    <p>
+                        A <strong>Hipóteses Válidas, Lda.</strong> iniciou a sua atividade em 2011, na sequência das necessidades sentidas no seio das PME's no âmbito da contabilidade, fiscalidade e gestão.
+                    </p>
+                    <p>
+                        A nossa missão é fazer um acompanhamento permanente no intuito de ajudar os clientes a crescerem, baseando as nossas ações no maior <strong>rigor e ética</strong> profissional.
+                    </p>
+                    <p>
+                        O nosso objetivo principal é satisfazer os nossos clientes nas áreas da Contabilidade, Fiscalidade, Apoio à Gestão e Gestão Administrativa de Recursos Humanos. Prestamos ainda um serviço de proximidade na área da Mediação de Seguros.
+                    </p>
+                </div>
+                
+                {# Values Cards #}
+                <div class="values-grid">
+                    <div class="value-card">
+                        <svg class="value-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <h4>Atendimento Local</h4>
+                        <p>Escritório em Torres Vedras</p>
+                    </div>
                     
-                    <div class="about-highlight">
-                        <div class="highlight-item">
-                            <span class="highlight-number">15+</span>
-                            <span class="highlight-label">Anos de experiência</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-number">2011</span>
-                            <span class="highlight-label">Ano de constituição</span>
-                        </div>
+                    <div class="value-card">
+                        <svg class="value-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="m12 22 8-4-8-4-8 4 8 4Z"/>
+                            <path d="m2 12 10-6 10 6"/>
+                            <path d="M22 12v8"/>
+                            <path d="M2 12v8"/>
+                        </svg>
+                        <h4>Rigor e Ética</h4>
+                        <p>Transparência e confiança</p>
                     </div>
-                </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <span>📸 Equipa Hipóteses Válidas</span>
+                    
+                    <div class="value-card">
+                        <svg class="value-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        <h4>15+ Anos</h4>
+                        <p>Experiência desde 2011</p>
                     </div>
                 </div>
             </div>
-        </section>
+            
+            <div class="about-image">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         alt="Equipa Hipóteses Válidas - Ao Seu Lado" 
+                         class="about-img"
+                         loading="lazy">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="image-badge">
+                    <span class="badge-text">Ao Seu Lado</span>
+                    <span class="badge-subtitle">Proximidade e disponibilidade para o seu negócio</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# Services Preview Section #}
+<section class="services-preview-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Os Nossos Serviços</h2>
+            <p class="section-subtitle">Acompanhamos o seu negócio em todas as fases, com rigor, ética e proximidade.</p>
+        </div>
         
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-box">
-                    <h2>Vamos falar sobre o seu negócio?</h2>
-                    <p>Marque uma reunião sem compromisso para conhecermos a sua realidade e apresentarmos as melhores soluções.</p>
-                    <p></p>
-                    <a href="contacto.html" class="btn btn-primary btn-large">Contacte-nos</a>
+        <div class="services-grid">
+            <article class="service-card">
+                <div class="service-icon-wrapper">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <path d="M3 15h6"/>
+                        <path d="M3 18h6"/>
+                        <path d="M3 21h6"/>
+                    </svg>
                 </div>
-            </div>
-        </section>
-    </main>
-
-    {% include "footer.njk" %}
-
-    <script src="header.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+                <h3>Contabilidade</h3>
+                <p>Acompanhamento contabilístico completo para empresários, PME's e outras entidades.</p>
+            </article>
+            
+            <article class="service-card">
+                <div class="service-icon-wrapper">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+                        <path d="M15 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                        <path d="M15 12a3 3 0 0 0-3 3c0 2-3 2-3 3v1a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-1a3 3 0 0 0-3-3c0-1-2-1-3-3Z"/>
+                        <path d="M4 22h16"/>
+                    </svg>
+                </div>
+                <h3>Fiscalidade</h3>
+                <p>Apoio especializado em IRS, IRC, IVA e demais obrigações fiscais.</p>
+            </article>
+            
+            <article class="service-card">
+                <div class="service-icon-wrapper">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <rect width="20" height="14" x="2" y="3" rx="2"/>
+                        <line x1="8" x2="16" y1="21" y2="21"/>
+                        <line x1="12" x2="12" y1="17" y2="21"/>
+                    </svg>
+                </div>
+                <h3>Apoio à Gestão</h3>
+                <p>Consultoria estratégica para ajudar os clientes a crescerem de forma sustentável.</p>
+            </article>
+            
+            <article class="service-card">
+                <div class="service-icon-wrapper">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h3>Recursos Humanos</h3>
+                <p>Processamento de salários e gestão da Segurança Social.</p>
+            </article>
+            
+            <article class="service-card">
+                <div class="service-icon-wrapper">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                    </svg>
+                </div>
+                <h3>Mediação de Seguros</h3>
+                <p>Soluções de proteção para o seu negócio e família.</p>
+            </article>
+            
+            <article class="service-card service-card-cta">
+                <div class="service-icon-wrapper">
+                    <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </div>
+                <h3>Diagnóstico Gratuito</h3>
+                <p>Não sabe qual o serviço que precisa? Fale connosco.</p>
+                <a href="/contacto/" class="btn btn-primary btn-small">Fale Connosco</a>
+            </article>
+        </div>
+    </div>
+</section>
