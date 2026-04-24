@@ -970,8 +970,8 @@ address {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20x;
-  height: 20px;
+  width: 30x;
+  height: 30px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
