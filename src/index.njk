@@ -4,53 +4,21 @@ description: Contabilidade, Fiscalidade e Apoio à Gestão com rigor e proximida
 layout: base.njk
 ---
 
-{# Hero Section #}
-<section class="hero">
-    <div class="container hero-container">
+{# Hero Section - Réplica PROD #}
+<section class="hero" id="inicio">
+    <div class="hero-container container">
         <div class="hero-content">
-            <h1 class="hero-title">Contabilidade, Fiscalidade e Gestão<span class="destaque-ouro"> - em Torres Vedras desde 2011</span></h1>
-            <p class="hero-subtitle">Na Hipóteses Válidas fazemos um acompanhamento permanente para ajudar os nossos clientes a crescerem, baseando a nossa ação no maior rigor e ética.</p>
-            
+            <h1 class="hero-title">
+                Contabilidade, Fiscalidade e Gestão
+                <span class="hero-subtitle-text">Torres Vedras desde 2011</span>
+            </h1>
+            <p class="hero-description">
+                Acompanhamento permanente para ajudar o seu negócio a crescer, com o maior rigor e ética profissional.
+            </p>
             <div class="hero-buttons">
-                <a href="/contacto/" class="btn btn-primary">Peça uma reunião</a>
-                <a href="tel:+351968481817" class="btn btn-secondary">
-                    <img src="/assets/icons/phone-ouro.svg" alt="" class="footer-icon-areia" aria-hidden="true">
-                    968 481 817
-                </a>
+                <a href="/servicos/" class="btn btn-primary">Conhecer Serviços</a>
+                <a href="/contacto/" class="btn btn-secondary">Marcar Reunião</a>
             </div>
-        </div>
-        <div class="hero-decoration" aria-hidden="true">
-            <div class="decoration-circle"></div>
-            <div class="decoration-dots"></div>
-        </div>
-    </div>
-</section>
-
-{# Destaques #}
-<section class="destaques">
-    <div class="container">
-        <div class="destaques-grid">
-            <article class="destaque-card">
-                <div class="destaque-icon">
-                    <img src="/assets/icons/locationAway-ouro.svg" alt="" aria-hidden="true" class="destaque-icon">
-                </div>
-                <h3>Atendimento Local</h3>
-                <p>Escritório em Torres Vedras, perto de si, com atendimento personalizado.</p>
-            </article>
-            <article class="destaque-card">
-                <div class="destaque-icon">
-                    <img src="/assets/icons/lockPerson-ouro.svg" alt="" aria-hidden="true" class="destaque-icon">
-                </div>
-                <h3>Rigor e Ética</h3>
-                <p>Acompanhamento baseado na transparência e confiança que o seu negócio merece.</p>
-            </article>
-            <article class="destaque-card">
-                <div class="destaque-icon">
-                    <img src="/assets/icons/handshake-ouro.svg" alt="" aria-hidden="true" class="destaque-icon">
-                </div>
-                <h3>Acompanhamento Permanente</h3>
-                <p>Estamos consigo em todas as fases do negócio, com proximidade e disponibilidade.</p>
-            </article>
         </div>
     </div>
 </section>
@@ -58,26 +26,159 @@ layout: base.njk
 {# Trust Bar #}
 <div class="trust-bar">
     <div class="container">
-        <p class="trust-text">
-            <span>Membro da Ordem dos Contabilistas Certificados</span>
-            <span class="separator" aria-hidden="true">·</span>
-            <span>Especialistas em PME e Empresários em Nome Individual</span>
-            <span class="separator" aria-hidden="true">·</span>
-            <span>Mediação de Seguros</span>
-        </p>
+        <div class="trust-badges">
+            <span class="trust-badge">Membro da OCC</span>
+            <span class="trust-badge">Especialistas PME</span>
+            <span class="trust-badge">Mediação de Seguros</span>
+        </div>
     </div>
 </div>
 
-{# Introdução #}
-<section class="intro-section">
+{# Destaques / Value Props #}
+<section class="destaques" id="sobre">
     <div class="container">
-        <div class="intro-wrapper">
-            <div class="intro-text">
-                <h2>15 anos a apoiar empresas em Torres Vedras</h2>
-                <p>A Hipóteses Válidas nasceu para responder às necessidades das PME's nas áreas da contabilidade, fiscalidade e gestão. A nossa missão é ajudar os clientes a crescer, com rigor e ética profissional.</p>
-            </div>
-            <div class="intro-cta">
-                <a href="/sobre/" class="btn btn-secondary">Conheça a nossa história →</a>
+        <div class="section-header">
+            <h2 class="section-title">Porquê Escolher a Hipóteses Válidas</h2>
+            <p class="section-subtitle">Diferenciais que fazem a diferença no acompanhamento do seu negócio</p>
+        </div>
+        
+        <div class="destaques-grid">
+            <article class="destaque-card">
+                <div class="destaque-icon-wrapper">
+                    <svg class="destaque-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                </div>
+                <h3>Atendimento Local</h3>
+                <p>Escritório em Torres Vedras, perto de si, com atendimento personalizado e de proximidade.</p>
+            </article>
+            
+            <article class="destaque-card">
+                <div class="destaque-icon-wrapper">
+                    <svg class="destaque-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="m12 22 8-4-8-4-8 4 8 4Z"/>
+                        <path d="m2 12 10-6 10 6"/>
+                        <path d="M22 12v8"/>
+                        <path d="M2 12v8"/>
+                    </svg>
+                </div>
+                <h3>Rigor e Ética</h3>
+                <p>Transparência e confiança em cada serviço, baseando a nossa ação no maior rigor profissional.</p>
+            </article>
+            
+            <article class="destaque-card">
+                <div class="destaque-icon-wrapper">
+                    <svg class="destaque-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h3>15+ Anos de Experiência</h3>
+                <p>Desde 2011 ao seu lado, acompanhando o crescimento de centenas de empresas e empresários.</p>
+            </article>
+        </div>
+        
+        <div class="section-cta">
+            <a href="/sobre/" class="btn btn-outline">Conheça a nossa história →</a>
+        </div>
+    </div>
+</section>
+
+{# Serviços Preview #}
+<section class="servicos-preview" id="servicos">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Os Nossos Serviços</h2>
+            <p class="section-subtitle">Acompanhamos o seu negócio em todas as fases, com rigor e proximidade</p>
+        </div>
+        
+        <div class="servicos-grid">
+            <article class="servico-card">
+                <div class="servico-icon-wrapper">
+                    <svg class="servico-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <path d="M3 15h6"/>
+                        <path d="M3 18h6"/>
+                        <path d="M3 21h6"/>
+                    </svg>
+                </div>
+                <h3>Contabilidade</h3>
+                <p>Acompanhamento contabilístico completo para empresários, PME's e outras entidades.</p>
+            </article>
+            
+            <article class="servico-card">
+                <div class="servico-icon-wrapper">
+                    <svg class="servico-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+                        <path d="M15 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                        <path d="M15 12a3 3 0 0 0-3 3c0 2-3 2-3 3v1a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-1a3 3 0 0 0-3-3c0-1-2-1-3-3Z"/>
+                        <path d="M4 22h16"/>
+                    </svg>
+                </div>
+                <h3>Fiscalidade</h3>
+                <p>Apoio especializado em IRS, IRC, IVA e demais obrigações fiscais.</p>
+            </article>
+            
+            <article class="servico-card">
+                <div class="servico-icon-wrapper">
+                    <svg class="servico-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <rect width="20" height="14" x="2" y="3" rx="2"/>
+                        <line x1="8" x2="16" y1="21" y2="21"/>
+                        <line x1="12" x2="12" y1="17" y2="21"/>
+                    </svg>
+                </div>
+                <h3>Apoio à Gestão</h3>
+                <p>Consultoria estratégica para ajudar os clientes a crescerem de forma sustentável.</p>
+            </article>
+            
+            <article class="servico-card">
+                <div class="servico-icon-wrapper">
+                    <svg class="servico-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h3>Recursos Humanos</h3>
+                <p>Processamento de salários e gestão da Segurança Social.</p>
+            </article>
+            
+            <article class="servico-card">
+                <div class="servico-icon-wrapper">
+                    <svg class="servico-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                    </svg>
+                </div>
+                <h3>Mediação de Seguros</h3>
+                <p>Soluções de proteção para o seu negócio e família.</p>
+            </article>
+        </div>
+        
+        <div class="section-cta">
+            <a href="/servicos/" class="btn btn-primary">Ver Todos os Serviços</a>
+        </div>
+    </div>
+</section>
+
+{# CTA Final #}
+<section class="cta-final" id="contato">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Pronto para Fazer Crescer o Seu Negócio?</h2>
+            <p>Estamos disponíveis para ajudar. Entre em contacto connosco.</p>
+            <div class="cta-buttons">
+                <a href="/contacto/" class="btn btn-primary btn-large">Fale Connosco</a>
+                <a href="tel:+351968481817" class="btn btn-outline btn-large">
+                    <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    968 481 817
+                </a>
             </div>
         </div>
     </div>
