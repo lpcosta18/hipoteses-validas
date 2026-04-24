@@ -1,138 +1,288 @@
 ---
-title: Contacto
-description: Entre em contacto com a Hipóteses Válidas
+title: Contactos
+description: Entre em contacto com a Hipóteses Válidas - Contabilidade e Fiscalidade em Torres Vedras. Estamos disponíveis para ajudar o seu negócio a crescer.
 layout: base.njk
 ---
-permalink: contacto.html
----
-<!DOCTYPE html>
-<html lang="pt-PT">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactos - Hipóteses Válidas</title>
-    <meta name="description" content="Contacte a Hipóteses Válidas em Torres Vedras para serviços de contabilidade, fiscalidade e apoio à gestão.">
-    <link rel="icon" type="image/png" href="assets/logo/logo-hv-favicon-optimized.png">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    {% include "header.njk" %}
 
-    <main id="main-content" tabindex="-1">
-        <section class="page-header">
-            <div class="container">
-                <h1>Contactos</h1>
-            </div>
-        </section>
+{# Contact Section #}
+<section id="contato" class="contact-section">
+    {# Decoration Elements #}
+    <div class="contact-decoration contact-decoration-1"></div>
+    <div class="contact-decoration contact-decoration-2"></div>
+    
+    <div class="container">
+        <div class="contact-header">
+            <h2 class="section-title">Contacte-nos</h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">Estamos disponíveis para ajudar o seu negócio a crescer.</p>
+        </div>
 
-        <section class="contact-section">
-            <div class="container contact-container">
-                <div class="contact-info">
-                    <div class="info-card">
-                        <h3>Informação prática</h3>
-                        
-                        <div class="info-item">
-                            <img src="assets/icons/phone-ouro.svg" alt="Telefone" class="info-icon">
-                            <div>
-                                <strong>Telefone</strong>
-                                <p class="contact-list"><a href="tel:968481817">968 481 817</a></p>
-                            </div>
+        <div class="contact-grid">
+            {# Contact Info Column #}
+            <div class="contact-info-card">
+                <h3 class="contact-info-title">Informação de Contacto</h3>
+                
+                <div class="contact-details">
+                    {# Telefone #}
+                    <div class="contact-detail-item">
+                        <div class="contact-icon-wrapper">
+                            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
                         </div>
-
-                        <div class="info-item">
-                            <img src="assets/icons/mail-ouro.svg" alt="Email" class="info-icon">
-                            <div>
-                                <strong>Email</strong>
-                                <p class="contact-list"><a href="mailto:geral@hipoteses-validas.pt">geral@hipoteses-validas.pt</a></p>
-                            </div>
+                        <div>
+                            <h4>Telefone</h4>
+                            <a href="tel:+351968481817">968 481 817</a>
                         </div>
-
-                        <div class="info-item">
-                            <img src="assets/icons/clock-ouro.svg" alt="Horário" class="info-icon">
-                            <div>
-                                <strong>Horário</strong>
-                                <p>Segunda a Sexta<br>9h00-13h00 e 14h00-18h00</p>
-                            </div>
-                        </div>
-
-                        <div class="info-item">
-                            <img src="assets/icons/location-ouro.svg" alt="Morada" class="info-icon">
-                            <div>
-                                <strong>Morada</strong>
-                                <p>Rua Joaquim Maria Simões, 1<br>2560-281 Torres Vedras</p>
-                            </div>
-                        </div>
-						<div class="map-container">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3081.123456789!2d-9.258456!3d39.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd186e1e2d5b2b7f%3A0x123456789abcdef!2sRua%20Joaquim%20Maria%20Sim%C3%B5es%2C%201%2C%202560-281%20Torres%20Vedras!5e0!3m2!1spt-PT!2spt!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-						</div>
-
                     </div>
                     
-                </div>
-                
-                <div class="contact-form">
-                    <h3>Envie-nos uma mensagem</h3>
-                    
-                    <form id="contactForm" action="#" method="post" novalidate aria-label="Formulário de contacto">
-                        <div class="form-group">
-                            <label for="nome">Nome completo *</label>
-                            <input type="text" id="nome" name="nome" required aria-required="true" aria-describedby="nome-help">
-                            <small id="nome-help" class="form-help">Introduza o seu nome completo</small>
+                    {# Email #}
+                    <div class="contact-detail-item">
+                        <div class="contact-icon-wrapper">
+                            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                            </svg>
                         </div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:geral@hipoteses-validas.pt">geral@hipoteses-validas.pt</a>
+                        </div>
+                    </div>
+                    
+                    {# Horário #}
+                    <div class="contact-detail-item">
+                        <div class="contact-icon-wrapper">
+                            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Horário</h4>
+                            <p>Segunda a Sexta</p>
+                            <p class="schedule-detail">9h00-13h00 e 14h00-18h00</p>
+                        </div>
+                    </div>
+                    
+                    {# Morada #}
+                    <div class="contact-detail-item">
+                        <div class="contact-icon-wrapper">
+                            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Morada</h4>
+                            <a href="https://maps.google.com/?q=Rua+Joaquim+Maria+Simões,+1,+2560-281+Torres+Vedras" 
+                               target="_blank" 
+                               rel="noopener noreferrer">
+                                Rua Joaquim Maria Simões, 1<br>
+                                2560-281 Torres Vedras
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
+                {# Google Maps #}
+                <div class="contact-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3097.5!2d-9.26!3d39.09!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zU3VhIEpvcXVpbSBNYXJpYSBTaW3DtWVzLCAxLCAyNTYwLTI4MSBUb3JyZXMgVmVkcmFz!5e0!3m2!1spt-PT!2spt!4v1234567890" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localização Hipóteses Válidas">
+                    </iframe>
+                </div>
+            </div>
+
+            {# Contact Form Column #}
+            <div class="contact-form-card">
+                <h3 class="contact-form-title">Envie-nos uma Mensagem</h3>
+                
+                {# Success State (hidden by default) #}
+                <div id="formSuccess" class="form-success" hidden>
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4>Mensagem enviada!</h4>
+                    <p>
+                        Obrigado pelo teu contacto.<br>
+                        Entraremos em contacto brevemente.
+                    </p>
+                    <button type="button" class="success-btn" onclick="resetContactForm()">
+                        <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="m15 18-6-6 6-6"/>
+                        </svg>
+                        Enviar outra mensagem
+                    </button>
+                </div>
+
+                {# Error State (hidden by default) #}
+                <div id="formError" class="form-error-message" hidden>
+                    <svg class="error-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                    </svg>
+                    <span id="formErrorMessage">Erro ao enviar mensagem.</span>
+                </div>
+
+                {# Form #}
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="nome">Nome *</label>
+                        <input type="text" id="nome" name="nome" required class="form-control" placeholder="O seu nome" autocomplete="name">
+                        <span class="form-error-text" id="nomeError">Este campo é obrigatório</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="empresa">Empresa</label>
+                        <input type="text" id="empresa" name="empresa" class="form-control" placeholder="Nome da empresa" autocomplete="organization">
+                    </div>
+                    
+                    <div class="form-row">
                         <div class="form-group">
                             <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-help">
-                            <small id="email-help" class="form-help">Introduza um endereço de email válido</small>
+                            <input type="email" id="email" name="email" required class="form-control" placeholder="seu@email.com" autocomplete="email">
+                            <span class="form-error-text" id="emailError">Email inválido</span>
                         </div>
-
                         <div class="form-group">
                             <label for="telemovel">Telemóvel</label>
-                            <input type="tel" id="telemovel" name="telemovel" aria-describedby="telemovel-help">
-                            <small id="telemovel-help" class="form-help">Opcional - para contacto mais rápido</small>
+                            <input type="tel" id="telemovel" name="telemovel" class="form-control" placeholder="96XXXXXXXX" autocomplete="tel" pattern="[0-9]{9}">
                         </div>
-
-                        <div class="form-group">
-                            <label for="assunto">Assunto</label>
-                            <select id="assunto" name="assunto" aria-describedby="assunto-help">
-                                <option value="">Selecione um assunto</option>
-                                <option value="contabilidade">Contabilidade</option>
-                                <option value="fiscalidade">Fiscalidade</option>
-                                <option value="recursos-humanos">Recursos Humanos</option>
-                                <option value="seguros">Mediação de Seguros</option>
-                                <option value="outro">Outro</option>
-                            </select>
-                            <small id="assunto-help" class="form-help">Selecione o assunto da sua mensagem</small>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="mensagem">Mensagem *</label>
-                            <textarea id="mensagem" name="mensagem" rows="5" required aria-required="true" aria-describedby="mensagem-help"></textarea>
-                            <small id="mensagem-help" class="form-help">Descreva o motivo do seu contacto</small>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-submit" aria-label="Enviar mensagem do formulário">Enviar mensagem</button>
-                        <p class="form-note">* Campos obrigatórios</p>
-                    </form>
+                    </div>
                     
-                    <div id="form-success" class="form-message form-message--success" style="display: none;" role="alert" aria-live="polite" aria-atomic="true">
-                        ✅ Mensagem enviada com sucesso! Entraremos em contacto brevemente.
+                    <div class="form-group">
+                        <label for="assunto">Assunto *</label>
+                        <select id="assunto" name="assunto" required class="form-select">
+                            <option value="">Selecione um assunto</option>
+                            <option value="contabilidade">Contabilidade</option>
+                            <option value="fiscalidade">Fiscalidade</option>
+                            <option value="gestao">Apoio à Gestão</option>
+                            <option value="rh">Recursos Humanos</option>
+                            <option value="seguros">Mediação de Seguros</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                        <span class="form-error-text" id="assuntoError">Selecione um assunto</span>
                     </div>
-                    <div id="form-error" class="form-message form-message--error" style="display: none;" role="alert" aria-live="assertive" aria-atomic="true">
-                        ❌ Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.
+                    
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem *</label>
+                        <textarea id="mensagem" name="mensagem" required class="form-textarea" placeholder="Como podemos ajudar?" rows="5"></textarea>
+                        <span class="form-error-text" id="mensagemError">Este campo é obrigatório</span>
                     </div>
-                    <div id="form-loading" class="form-message form-message--info" style="display: none;" role="alert" aria-live="polite" aria-atomic="true">
-                        ⏳ A enviar a sua mensagem...
+                    
+                    <div class="form-checkbox-group">
+                        <input type="checkbox" id="privacidade" name="privacidade" required class="form-checkbox">
+                        <label for="privacidade">
+                            Aceito a <a href="#" class="link-ouro">política de privacidade</a> *
+                        </label>
                     </div>
-                </div>
+                    <span class="form-error-text" id="privacidadeError">Deve aceitar a política de privacidade</span>
+                    
+                    <button type="submit" id="submitBtn" class="btn btn-primary btn-full">
+                        Enviar Mensagem
+                    </button>
+                </form>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
+</section>
 
-    {% include "footer.njk" %}
+{# Form Script #}
+<script>
+function resetContactForm() {
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    const error = document.getElementById('formError');
+    
+    form.reset();
+    form.classList.remove('hidden');
+    success.hidden = true;
+    error.hidden = true;
+    
+    // Clear error states
+    document.querySelectorAll('.form-control, .form-select, .form-textarea').forEach(el => {
+        el.classList.remove('error');
+    });
+    document.querySelectorAll('.form-error-text').forEach(el => {
+        el.style.display = 'none';
+    });
+}
 
-    <script src="header.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const form = this;
+    const submitBtn = document.getElementById('submitBtn');
+    const success = document.getElementById('formSuccess');
+    const error = document.getElementById('formError');
+    
+    // Clear previous errors
+    document.querySelectorAll('.form-error-text').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.form-control, .form-select, .form-textarea').forEach(el => el.classList.remove('error'));
+    
+    let isValid = true;
+    
+    // Validate required fields
+    const requiredFields = ['nome', 'email', 'assunto', 'mensagem', 'privacidade'];
+    requiredFields.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        const errorEl = document.getElementById(fieldId + 'Error');
+        
+        if (fieldId === 'privacidade') {
+            if (!field.checked) {
+                errorEl.style.display = 'block';
+                isValid = false;
+            }
+        } else if (fieldId === 'email') {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!field.value || !emailRegex.test(field.value)) {
+                document.getElementById('emailError').style.display = 'block';
+                field.classList.add('error');
+                isValid = false;
+            }
+        } else {
+            if (!field.value) {
+                errorEl.style.display = 'block';
+                field.classList.add('error');
+                isValid = false;
+            }
+        }
+    });
+    
+    if (!isValid) return;
+    
+    // Show loading state
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="btn-loading">A enviar...</span>';
+    
+    try {
+        // TODO: Replace with actual form submission endpoint
+        // Example: await fetch('/api/contact', { method: 'POST', body: new FormData(form) });
+        
+        // Simulate API call for demo
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        // Show success
+        form.hidden = true;
+        success.hidden = false;
+        
+    } catch (err) {
+        // Show error
+        error.hidden = false;
+        document.getElementById('formErrorMessage').textContent = 'Erro ao enviar mensagem. Tente novamente.';
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+    }
+});
+</script>
