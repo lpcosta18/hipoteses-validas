@@ -1562,6 +1562,19 @@ address {
   height: 20px;
   flex-shrink: 0;
 }
+/* =================================================================
+   🔒 UTILITÁRIOS DE VISIBILIDADE (CRÍTICO)
+   ================================================================= */
+[hidden] {
+  display: none !important;
+}
+
+/* Garantir que elementos de estado não aparecem ao carregar */
+.form-success[hidden],
+.form-error-message[hidden],
+.contact-form[hidden] {
+  display: none !important;
+}
 
 /* =================================================================
    📱 RESPONSIVE
