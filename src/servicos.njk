@@ -3,98 +3,94 @@ title: Serviços
 description: Saiba os serviços disponibilizados por Hipóteses Válidas - Contabilidade em Torres Vedras
 layout: base.njk
 ---
-permalink: servicos.html
----
-<!DOCTYPE html>
-<html lang="pt-PT">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços - Hipóteses Válidas</title>
-    <meta name="description" content="Serviços de contabilidade, fiscalidade, apoio à gestão, recursos humanos e mediação de seguros em Torres Vedras.">
-    <link rel="icon" type="image/png" href="assets/logo/logo-hv-favicon-optimized.png">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    {% include "header.njk" %}
 
-    <main id="main-content" tabindex="-1">
-        <section class="page-header">
-            <div class="container">
-                <h1>Os nossos serviços</h1>
-                <p class="page-subtitle">Acompanhamos o seu negócio em todas as fases, com rigor, ética e proximidade.</p>
-            </div>
-        </section>
+{# Services Section #}
+<section id="serviços" class="about-section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-content">
+                <h2 class="section-title">
+                    Os Nossos <span class="title-highlight">Serviços</span>
+                </h2>
+				            <p class="section-subtitle">Acompanhamos o seu negócio em todas as fases, com rigor, ética e proximidade.</p>
 
-        <section class="services-list">
-            <div class="container">
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#c59e43"><path d="M484-120q-17 0-28.5-11.5T444-160q0-7 3-14.5t9-13.5l185-185-29-29-184 185q-6 6-13 9t-15 3q-17 0-28.5-11.5T360-245q0-10 3-16.5t8-11.5l185-185-28-28-185 184q-6 6-13 9t-16 3q-16 0-28-12t-12-28q0-8 3-15t9-13l185-185-29-28-184 185q-5 5-12 8t-17 3q-17 0-28.5-11.5T189-415q0-8 3-15t9-13l223-223 150 151q11 11 26 17.5t30 6.5q32 0 56-22.5t24-57.5q0-14-5-29t-18-28L508-807q17-16 38-24.5t42-8.5q26 0 48 8.5t40 26.5l169 170q18 18 26.5 40t8.5 51q0 20-9 40.5T845-466L512-132q-8 8-14 10t-14 2ZM141-440l-26-26q-17-16-26-38t-9-46q0-26 10-48t25-37l169-170q16-16 38-25.5t43-9.5q27 0 48 7.5t41 27.5l205 205q6 6 9 13t3 15q0 16-12 28t-28 12q-9 0-15-2.5t-13-9.5L423-722 141-440Z"/></svg>
-                        </div>
-                        <h3>Contabilidade</h3>
-                        <p>Acompanhamento contabilístico completo para empresários, PME's e outras entidades.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#c59e43"><path d="m582-298 56-57-118-118v-167h-80v200l142 142ZM440-720h80v-80h-80v80Zm280 280h80v-80h-80v80ZM440-160h80v-80h-80v80ZM160-440h80v-80h-80v80ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
-                        </div>
-                        <h3>Fiscalidade</h3>
-                        <p>Apoio especializado em IRS, IRC, IVA e demais obrigações fiscais.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#c59e43"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v52q-18-6-37.5-9t-42.5-3q-116 0-198 82t-82 198q0 45 13 84t37 76H240Zm338.5-18.5Q520-157 520-240t58.5-141.5Q637-440 720-440t141.5 58.5Q920-323 920-240T861.5-98.5Q803-40 720-40T578.5-98.5ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Zm402.5 382.5Q780-275 780-300t-17.5-42.5Q745-360 720-360t-42.5 17.5Q660-325 660-300t17.5 42.5Q695-240 720-240t42.5-17.5ZM776-134q26-14 43-39-23-14-48-20.5t-51-6.5q-26 0-51 6.5T621-173q17 25 43 39t56 14q30 0 56-14Z"/></svg>
-                        </div>
-                        <h3>Apoio à Gestão</h3>
-                        <p>Consultoria estratégica para ajudar os clientes a crescerem.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#c59e43"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5Q513-640 480-640t-56.5 23.5Q400-593 400-560t23.5 56.5Q447-480 480-480t56.5-23.5ZM480-80Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Z"/></svg>
-                        </div>
-                        <h3>Recursos Humanos</h3>
-                        <p>Processamento de salários e gestão da Segurança Social.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#c59e43"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280 320-200v-80L480-520 160-720v80l320 200Z"/></svg>
-                        </div>
-                        <h3>Mediação de Seguros</h3>
-                        <p>Soluções de proteção para o seu negócio e família.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#c59e43"><path d="m582-298 56-57-118-118v-167h-80v200l142 142ZM440-720h80v-80h-80v80Zm280 280h80v-80h-80v80ZM440-160h80v-80h-80v80ZM160-440h80v-80h-80v80ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
-                        </div>
-                        <h3>Abertura de Empresa</h3>
-                        <p>Apoio na criação de empresas e tratamento documental.</p>
-                    </div>
-                    <div class="service-card service-card-highlight">
-                        <h3>Não sabe qual o serviço que precisa?</h3>
-                        <p>Fale connosco — fazemos um diagnóstico gratuito.</p>
-                        <a href="contacto.html" class="btn btn-primary btn-small">Contactar</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-box">
-                    <h2>Precisa de ajuda com a contabilidade?</h2>
-                    <p>Estamos em Torres Vedras e atendemos empresas em todo o país.</p>
-                    <a href="contacto.html" class="btn btn-primary btn-large">Peça um orçamento</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    {% include "footer.njk" %}
-
-    <script src="header.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+                <div class="section-divider"></div>
+                
+			<div class="services-grid">
+				<article class="service-card">
+					<div class="service-icon-wrapper">
+						<svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+							<path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/>
+							<polyline points="14 2 14 8 20 8"/>
+							<path d="M3 15h6"/>
+							<path d="M3 18h6"/>
+							<path d="M3 21h6"/>
+						</svg>
+					</div>
+					<h3>Contabilidade</h3>
+					<p>Acompanhamento contabilístico completo para empresários, PME's e outras entidades.</p>
+				</article>
+				
+				<article class="service-card">
+					<div class="service-icon-wrapper">
+						<svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+							<path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+							<path d="M15 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+							<path d="M15 12a3 3 0 0 0-3 3c0 2-3 2-3 3v1a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-1a3 3 0 0 0-3-3c0-1-2-1-3-3Z"/>
+							<path d="M4 22h16"/>
+						</svg>
+					</div>
+					<h3>Fiscalidade</h3>
+					<p>Apoio especializado em IRS, IRC, IVA e demais obrigações fiscais.</p>
+				</article>
+				
+				<article class="service-card">
+					<div class="service-icon-wrapper">
+						<svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+							<rect width="20" height="14" x="2" y="3" rx="2"/>
+							<line x1="8" x2="16" y1="21" y2="21"/>
+							<line x1="12" x2="12" y1="17" y2="21"/>
+						</svg>
+					</div>
+					<h3>Apoio à Gestão</h3>
+					<p>Consultoria estratégica para ajudar os clientes a crescerem de forma sustentável.</p>
+				</article>
+				
+				<article class="service-card">
+					<div class="service-icon-wrapper">
+						<svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+							<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+							<circle cx="9" cy="7" r="4"/>
+							<path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+							<path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+						</svg>
+					</div>
+					<h3>Recursos Humanos</h3>
+					<p>Processamento de salários e gestão da Segurança Social.</p>
+				</article>
+				
+				<article class="service-card">
+					<div class="service-icon-wrapper">
+						<svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+							<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+						</svg>
+					</div>
+					<h3>Mediação de Seguros</h3>
+					<p>Soluções de proteção para o seu negócio e família.</p>
+				</article>
+				
+				<article class="service-card service-card-cta">
+					<div class="service-icon-wrapper">
+						<svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+							<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+						</svg>
+					</div>
+					<h3>Diagnóstico Gratuito</h3>
+					<p>Não sabe qual o serviço que precisa? Fale connosco.</p>
+					<a href="/contacto/" class="btn btn-primary btn-small">Fale Connosco</a>
+				</article>
+			</div>
+           
+        </div>
+    </div>
+</section>
